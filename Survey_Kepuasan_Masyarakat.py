@@ -63,16 +63,15 @@ else:
         with col4:
             st.metric(label="Kinerja", value=(kinerja))
 
-        config_plotly = {"displayModeBar": False, "responsive": True}
         st.subheader("📈 Karakteristik Responden")
         fig_jk, fig_usia, fig_pd, fig_pk, fig_jl = grafik(df)
         cols1, cols2, cols3 = st.columns(3)                  
         with cols1:
-            st.plotly_chart(fig_pd, width='stretch', config=config_plotly)
+            st.plotly_chart(fig_pd, use_container_width=True)
         with cols2: 
-            st.plotly_chart(fig_jk, width='stretch', config=config_plotly)
+            st.plotly_chart(fig_jk, use_container_width=True)
         with cols3:
-            st.plotly_chart(fig_usia, width='stretch', config=config_plotly)
+            st.plotly_chart(fig_usia, use_container_width=True)
 
 
         cols4, cols5 = st.columns(2)
@@ -84,9 +83,9 @@ else:
         plt1, plt2 = korelasi_spearman(df, Nilai_Konversi_Per_Unsur)
         cols6, cols7 = st.columns(2)
         with cols6:
-            st.pyplot(plt1, width='stretch', config=config_plotly)
+            st.pyplot(plt1, use_container_width=True)
         with cols7:
-            st.pyplot(plt2, width='stretch', config=config_plotly)
+            st.pyplot(plt2, use_container_width=True)
     else:
         pilih_elemen2 = st.selectbox(
             "Lihat Berdasarkan",
