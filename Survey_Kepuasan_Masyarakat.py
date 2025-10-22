@@ -7,7 +7,7 @@ st.set_page_config(page_title="SKM Dashboard", page_icon=":bar_chart:", layout="
 
 st.title("📊 Dashboard Indeks Survei Kepuasan Masyarakat")
 
-with open("template_file.xlsx", "rb") as file:
+with open("data/template_file.xlsx", "rb") as file:
     file_data = file.read()
 
 # Tombol download
